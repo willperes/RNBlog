@@ -1,22 +1,28 @@
 import React from 'react';
 import {ScrollView, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {Box, BoxProps} from '../Box/Box';
+import {useAppSafeArea} from '@/hooks';
 
-interface Props {
+interface Props extends BoxProps {
   scrollable?: boolean;
 }
 
 export function Screen({
   children,
   scrollable = false,
+  ...boxProps
 }: React.PropsWithChildren<Props>) {
-  const {top, bottom} = useSafeAreaInsets();
+  const {top, bottom} = useAppSafeArea();
 
   const Container = scrollable ? ScrollView : View;
 
   return (
-    <View style={{flex: 1, paddingTop: top, paddingBottom: bottom}}>
+    <Box
+      flex={1}
+      paddingHorizontal={'screenPadding'}
+      style={{paddingTop: top, paddingBottom: bottom}}
+      {...boxProps}>
       <Container>{children}</Container>
-    </View>
+    </Box>
   );
 }
