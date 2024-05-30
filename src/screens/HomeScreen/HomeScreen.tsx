@@ -2,12 +2,12 @@ import {Box, Screen} from '@/components';
 import React from 'react';
 import {Text} from '@/components';
 import {FlatList, ListRenderItemInfo} from 'react-native';
-import {Post, usePostList} from '@/domain';
+import {PostSummary, usePostList} from '@/domain';
 
 export function HomeScreen() {
   const {data} = usePostList();
 
-  function renderItem({item}: ListRenderItemInfo<Post>) {
+  function renderItem({item}: ListRenderItemInfo<PostSummary>) {
     return (
       <Box mt={'s10'}>
         <Text>{item.title}</Text>

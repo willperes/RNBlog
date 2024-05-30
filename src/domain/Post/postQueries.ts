@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-const FIND_LIST = gql`
+const FIND_LIST_SUMMARY = gql`
   query FindList {
     posts {
       id
@@ -10,16 +10,11 @@ const FIND_LIST = gql`
       }
       title
       cover_image_url
-      elements {
-        type
-        content
-      }
       created_at
-      updated_at
     }
   }
 `;
 
 export const postQueries = {
-  FIND_LIST,
+  FIND_LIST_SUMMARY,
 };

@@ -19,3 +19,8 @@ export type PostElementAPI = {
   type: PostElement.Type;
   content: string;
 };
+
+export type PostSummaryAPI = Pick<
+  PostAPI,
+  'id' | 'author' | 'title' | 'cover_image_url' | 'created_at'
+>;

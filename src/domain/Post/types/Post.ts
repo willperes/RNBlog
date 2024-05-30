@@ -26,3 +26,8 @@ export namespace PostElement {
     Image = 'Image',
   }
 }
+
+export type PostSummary = Pick<
+  Post,
+  'id' | 'author' | 'title' | 'coverImageURL' | 'createdAt'
+>;
