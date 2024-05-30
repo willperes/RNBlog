@@ -22,7 +22,7 @@ export function Screen({
       paddingHorizontal={'screenPadding'}
       style={{paddingTop: top, paddingBottom: bottom}}
       {...boxProps}>
-      <Container>{children}</Container>
+      <Container style={{flex: 1}}>{children}</Container>
     </Box>
   );
 }
