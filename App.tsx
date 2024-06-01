@@ -5,7 +5,7 @@
  * @format
  */
 
-import {HomeScreen} from '@/screens';
+import {Routes} from '@/routes';
 import {darkTheme, theme} from '@/theme';
 import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
 import {ThemeProvider} from '@shopify/restyle';
@@ -25,7 +25,7 @@ function App(): React.JSX.Element {
     <ApolloProvider client={apolloClient}>
       <SafeAreaProvider>
         <ThemeProvider theme={colorScheme === 'dark' ? darkTheme : theme}>
-          <HomeScreen />
+          <Routes />
         </ThemeProvider>
       </SafeAreaProvider>
     </ApolloProvider>
