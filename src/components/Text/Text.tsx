@@ -8,7 +8,7 @@ type SRTextProps = React.ComponentProps<typeof SRText>;
 
 export function Text({children, ...srTextProps}: SRTextProps) {
   return (
-    <SRText color={'foreground'} {...srTextProps}>
+    <SRText color={'backgroundContrast'} {...srTextProps}>
       {children}
     </SRText>
   );

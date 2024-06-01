@@ -2,8 +2,9 @@ import {createTheme} from '@shopify/restyle';
 
 const theme = createTheme({
   colors: {
-    background: '#ffffff',
-    foreground: '#000000',
+    background: '#f0f0f0',
+    backgroundContrast: '#000000',
+    cardBackground: '#ffffff',
   },
   spacing: {
     screenPadding: 20,
@@ -36,8 +37,9 @@ const darkTheme: Theme = {
   ...theme,
   colors: {
     ...theme.colors,
-    background: '#000000',
-    foreground: '#ffffff',
+    background: '#0f0f0f',
+    backgroundContrast: '#ffffff',
+    cardBackground: '#000000',
   },
 };
 

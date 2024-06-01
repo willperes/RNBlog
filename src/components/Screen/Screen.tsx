@@ -10,6 +10,7 @@ interface Props extends BoxProps {
 export function Screen({
   children,
   scrollable = false,
+  style,
   ...boxProps
 }: React.PropsWithChildren<Props>) {
   const {top, bottom} = useAppSafeArea();
@@ -20,7 +21,8 @@ export function Screen({
     <Box
       flex={1}
       paddingHorizontal={'screenPadding'}
-      style={{paddingTop: top, paddingBottom: bottom}}
+      backgroundColor={'background'}
+      style={[{paddingTop: top, paddingBottom: bottom}, style]}
       {...boxProps}>
       <Container style={{flex: 1}}>{children}</Container>
     </Box>
