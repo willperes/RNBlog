@@ -1,12 +1,15 @@
 import React from 'react';
-import {Box, Text} from '@/components';
+import {Box, BoxProps, Text} from '@/components';
 import {Post} from '@/domain';
+import {Theme} from '@/theme';
 
-type Props = Pick<Post, 'author' | 'createdAt'>;
+type Props = {
+  cardPadding: keyof Theme['spacing'];
+} & Pick<Post, 'author' | 'createdAt'>;
 
-export function PostCardFooter({author, createdAt}: Props) {
+export function PostCardFooter({cardPadding, author, createdAt}: Props) {
   return (
-    <Box flexDirection={'row'}>
+    <Box paddingHorizontal={cardPadding} {...$boxStyle}>
       <Text preset={'paragraphSmall'}>{createdAt.toLocaleDateString()}</Text>
       <Text preset={'paragraphSmall'}>
         {' - '}
@@ -15,3 +18,8 @@ export function PostCardFooter({author, createdAt}: Props) {
     </Box>
   );
 }
+
+const $boxStyle: BoxProps = {
+  flexDirection: 'row',
+  paddingVertical: 's8',
+};
