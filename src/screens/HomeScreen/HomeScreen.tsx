@@ -2,11 +2,12 @@ import {PostCard, Screen} from '@/components';
 import React from 'react';
 import {FlatList, ListRenderItemInfo} from 'react-native';
 import {PostSummary, usePostList} from '@/domain';
-import {useAppSafeArea} from '@/hooks';
+import {useAppSafeArea, useAppTheme} from '@/hooks';
 
 export function HomeScreen() {
   const {top, bottom} = useAppSafeArea();
   const {data} = usePostList();
+  const {spacing} = useAppTheme();
 
   function renderItem({item}: ListRenderItemInfo<PostSummary>) {
     return <PostCard {...item} />;
@@ -22,6 +23,7 @@ export function HomeScreen() {
           flexGrow: 1,
           paddingTop: top,
           paddingBottom: bottom,
+          gap: spacing.s16,
         }}
         showsVerticalScrollIndicator={false}
       />

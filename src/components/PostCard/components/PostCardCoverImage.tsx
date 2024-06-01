@@ -6,7 +6,7 @@ import {Dimensions, Image} from 'react-native';
 
 type Props = Pick<Post, 'coverImageURL'>;
 
-const COVER_IMAGE_SIZE = Dimensions.get('screen').width * 0.3;
+const COVER_IMAGE_SIZE = Dimensions.get('screen').width * 0.28;
 
 export function PostCardCoverImage({coverImageURL}: Props) {
   const {borderRadii} = useAppTheme();

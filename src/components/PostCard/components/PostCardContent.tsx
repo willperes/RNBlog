@@ -2,14 +2,18 @@ import React from 'react';
 import {Box, Text} from '@/components';
 import {Post} from '@/domain';
 
-type Props = Pick<Post, 'title' | 'author' | 'createdAt'>;
+type Props = Pick<Post, 'title'>;
 
-export function PostCardContent({author, createdAt, title}: Props) {
+export function PostCardContent({title}: Props) {
   return (
-    <Box flexGrow={1}>
-      <Text>{title}</Text>
-      <Text>{author.name}</Text>
-      <Text>{createdAt.toLocaleDateString()}</Text>
+    <Box flexGrow={1} flexShrink={1}>
+      <Text
+        preset={'headingSmall'}
+        weight={'bold'}
+        numberOfLines={4}
+        lineBreakMode="tail">
+        {title}
+      </Text>
     </Box>
   );
 }

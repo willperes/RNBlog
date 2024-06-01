@@ -5,6 +5,7 @@ const theme = createTheme({
     background: '#f0f0f0',
     backgroundContrast: '#000000',
     cardBackground: '#ffffff',
+    cardBackgroundSecondary: '#e1e1e1',
   },
   spacing: {
     screenPadding: 20,
@@ -37,9 +38,10 @@ const darkTheme: Theme = {
   ...theme,
   colors: {
     ...theme.colors,
-    background: '#0f0f0f',
+    background: '#000000',
     backgroundContrast: '#ffffff',
-    cardBackground: '#000000',
+    cardBackground: '#161616',
+    cardBackgroundSecondary: '#282828',
   },
 };
 
