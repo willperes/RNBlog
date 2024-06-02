@@ -6,7 +6,7 @@ export function PostScreen({route}: AppScreenProps<'PostScreen'>) {
   const {postID} = route.params;
 
   return (
-    <Screen>
+    <Screen canGoBack>
       <Text>{`postID: ${postID}`}</Text>
     </Screen>
   );
