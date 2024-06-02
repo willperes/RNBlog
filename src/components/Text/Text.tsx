@@ -15,18 +15,32 @@ export interface TextProps extends SRTextProps {
 export function Text({
   children,
   preset = 'paragraphMedium',
-  weight = 'regular',
+  weight,
   style,
   ...srTextProps
 }: TextProps) {
+  const fontWeight = getFontWeight(preset, weight);
+
   return (
     <SRText
       color={'backgroundContrast'}
-      style={[$fontSizes[preset], $fontWeights[weight], style]}
+      style={[$fontSizes[preset], fontWeight, style]}
       {...srTextProps}>
       {children}
     </SRText>
   );
+}
+
+function getFontWeight(preset: TextPreset, weight?: FontWeight) {
+  if (weight) {
+    return $fontWeights[weight];
+  }
+
+  if (preset.match(/^heading/)) {
+    return $fontWeights.bold;
+  }
+
+  return $fontWeights.regular;
 }
 
 type TextPreset =
