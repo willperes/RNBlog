@@ -20,10 +20,10 @@ export type PostElement = {
 
 export namespace PostElement {
   export enum Type {
-    Title = 'Title',
-    Subtitle = 'Subtitle',
-    Paragraph = 'Paragraph',
-    Image = 'Image',
+    Title = 'title',
+    Subtitle = 'subtitle',
+    Paragraph = 'paragraph',
+    Image = 'image',
   }
 }
 
