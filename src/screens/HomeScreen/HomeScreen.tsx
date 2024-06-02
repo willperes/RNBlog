@@ -1,13 +1,16 @@
 import {PostCard, Screen, Text} from '@/components';
-import React from 'react';
+import React, {useRef} from 'react';
 import {FlatList, ListRenderItemInfo} from 'react-native';
 import {PostSummary, usePostList} from '@/domain';
 import {useAppSafeArea, useAppTheme} from '@/hooks';
+import {useScrollToTop} from '@react-navigation/native';
 
 export function HomeScreen() {
-  const {top, bottom} = useAppSafeArea();
+  const {top} = useAppSafeArea();
   const {data} = usePostList();
   const {spacing} = useAppTheme();
+  const flatListRef = useRef<FlatList<PostSummary>>(null);
+  useScrollToTop(flatListRef);
 
   function renderItem({item}: ListRenderItemInfo<PostSummary>) {
     return <PostCard {...item} />;
@@ -16,6 +19,7 @@ export function HomeScreen() {
   return (
     <Screen style={{paddingTop: 0, paddingBottom: 0}}>
       <FlatList
+        ref={flatListRef}
         data={data}
         keyExtractor={({id}) => id.toString()}
         renderItem={renderItem}
@@ -27,7 +31,7 @@ export function HomeScreen() {
         contentContainerStyle={{
           flexGrow: 1,
           paddingTop: top,
-          paddingBottom: bottom,
+          paddingBottom: spacing.screenPadding,
           gap: spacing.s16,
         }}
         showsVerticalScrollIndicator={false}

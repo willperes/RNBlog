@@ -1,8 +1,11 @@
 import {createTheme} from '@shopify/restyle';
+import {ViewStyle} from 'react-native';
 
 const theme = createTheme({
   colors: {
+    primary: '#0A84FF',
     background: '#f0f0f0',
+    backgroundBorder: '#D2D2D2',
     backgroundContrast: '#000000',
     cardBackground: '#ffffff',
     cardBackgroundSecondary: '#e1e1e1',
@@ -39,10 +42,19 @@ const darkTheme: Theme = {
   colors: {
     ...theme.colors,
     background: '#000000',
+    backgroundBorder: '#282828',
     backgroundContrast: '#ffffff',
     cardBackground: '#161616',
     cardBackgroundSecondary: '#282828',
   },
+};
+
+export const $shadowProps: ViewStyle = {
+  elevation: 10,
+  shadowColor: '#000',
+  shadowOpacity: 0.05,
+  shadowRadius: 12,
+  shadowOffset: {width: 0, height: -3},
 };
 
 export {theme, darkTheme};

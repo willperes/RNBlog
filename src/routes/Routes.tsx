@@ -2,8 +2,14 @@ import React from 'react';
 import {HomeScreen} from '@/screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
+import {AppTabBar} from './AppTabBar';
+import {View} from 'react-native';
 
-const Tab = createBottomTabNavigator();
+export type AppTabBottomTabParamList = {
+  HomeScreen: undefined;
+  SettingsScreen: undefined;
+};
+const Tab = createBottomTabNavigator<AppTabBottomTabParamList>();
 
 export function Routes() {
   return (
@@ -11,8 +17,10 @@ export function Routes() {
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
-        }}>
-        <Tab.Screen name={'Home'} component={HomeScreen} />
+        }}
+        tabBar={props => <AppTabBar {...props} />}>
+        <Tab.Screen name={'HomeScreen'} component={HomeScreen} />
+        <Tab.Screen name={'SettingsScreen'} component={View} />
       </Tab.Navigator>
     </NavigationContainer>
   );

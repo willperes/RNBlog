@@ -7,7 +7,7 @@ import {TextStyle} from 'react-native';
 const SRText = createText<Theme>();
 type SRTextProps = React.ComponentProps<typeof SRText>;
 
-interface TextProps extends SRTextProps {
+export interface TextProps extends SRTextProps {
   preset?: TextPreset;
   weight?: FontWeight;
 }
