@@ -1,4 +1,4 @@
-import {PostCard, Screen} from '@/components';
+import {PostCard, Screen, Text} from '@/components';
 import React from 'react';
 import {FlatList, ListRenderItemInfo} from 'react-native';
 import {PostSummary, usePostList} from '@/domain';
@@ -19,6 +19,11 @@ export function HomeScreen() {
         data={data}
         keyExtractor={({id}) => id.toString()}
         renderItem={renderItem}
+        ListHeaderComponent={
+          <Text preset={'headingLarge'} weight={'bold'} mt={'s4'}>
+            Posts
+          </Text>
+        }
         contentContainerStyle={{
           flexGrow: 1,
           paddingTop: top,
