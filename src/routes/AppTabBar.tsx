@@ -14,7 +14,7 @@ import {$shadowProps} from '@/theme';
 
 import {useAppSafeArea} from '../hooks/useAppSafeArea';
 
-import {AppTabBottomTabParamList} from './Routes';
+import {AppTabBottomTabParamList} from './AppTabNavigator';
 import {mapScreenToProps} from './mapScreenToProps';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';

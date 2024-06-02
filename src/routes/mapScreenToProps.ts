@@ -1,4 +1,4 @@
-import {AppTabBottomTabParamList} from './Routes';
+import {AppTabBottomTabParamList} from './AppTabNavigator';
 
 type AppTabScreen = keyof AppTabBottomTabParamList;
 type Props = {
