@@ -7,12 +7,14 @@ import {ScreenHeader} from './components/ScreenHeader';
 interface Props extends BoxProps {
   scrollable?: boolean;
   canGoBack?: boolean;
+  noHorizontalPading?: boolean;
 }
 
 export function Screen({
   children,
   scrollable = false,
   canGoBack = false,
+  noHorizontalPading,
   style,
   ...boxProps
 }: React.PropsWithChildren<Props>) {
@@ -23,11 +25,13 @@ export function Screen({
   return (
     <Box
       flex={1}
-      paddingHorizontal={'screenPadding'}
+      paddingHorizontal={noHorizontalPading ? undefined : 'screenPadding'}
       backgroundColor={'background'}
       style={[{paddingTop: top, paddingBottom: bottom}, style]}
       {...boxProps}>
-      <ScreenHeader canGoBack={canGoBack} />
+      <Box paddingHorizontal={noHorizontalPading ? 'screenPadding' : undefined}>
+        <ScreenHeader canGoBack={canGoBack} />
+      </Box>
       <Container style={{flex: 1}}>{children}</Container>
     </Box>
   );
