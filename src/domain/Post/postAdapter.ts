@@ -16,7 +16,12 @@ function mapAuthorApiToModel(authorAPI: PostAuthorAPI): PostAuthor {
 
 function mapApiToModel(postAPI: PostAPI): Post {
   return {
-    ...postAPI,
+    id: postAPI.id,
+    title: postAPI.title,
+    elements: postAPI.elements.map(e => ({
+      type: e.type,
+      content: e.content,
+    })),
     author: mapAuthorApiToModel(postAPI.author),
     coverImageURL: postAPI.cover_image_url,
     createdAt: new Date(postAPI.created_at),

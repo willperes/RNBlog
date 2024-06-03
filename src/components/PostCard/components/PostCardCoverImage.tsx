@@ -13,6 +13,7 @@ export function PostCardCoverImage({coverImageURL}: Props) {
 
   return (
     <Image
+      testID={'post-card-cover-image'}
       src={coverImageURL}
       style={{
         height: COVER_IMAGE_SIZE,
