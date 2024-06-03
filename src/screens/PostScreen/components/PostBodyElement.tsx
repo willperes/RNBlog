@@ -23,7 +23,11 @@ function Content({type, content}: PostElement) {
       );
 
     case PostElement.Type.Paragraph:
-      return <Text preset={'paragraphMedium'}>{content}</Text>;
+      return (
+        <Text preset={'paragraphMedium'} color={'textSecondary'}>
+          {content}
+        </Text>
+      );
 
     case PostElement.Type.Image:
       return (

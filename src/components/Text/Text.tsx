@@ -23,7 +23,7 @@ export function Text({
 
   return (
     <SRText
-      color={'backgroundContrast'}
+      color={'text'}
       style={[$fontSizes[preset], fontWeight, style]}
       {...srTextProps}>
       {children}

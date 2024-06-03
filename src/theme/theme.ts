@@ -6,9 +6,12 @@ const theme = createTheme({
     primary: '#0A84FF',
     background: '#f0f0f0',
     backgroundBorder: '#D2D2D2',
+    // TODO: remove and use neutral instead?
     backgroundContrast: '#000000',
     cardBackground: '#ffffff',
     cardBackgroundSecondary: '#e1e1e1',
+    text: '#141414',
+    textSecondary: '#414141',
   },
   spacing: {
     screenPadding: 20,
@@ -46,6 +49,8 @@ const darkTheme: Theme = {
     backgroundContrast: '#ffffff',
     cardBackground: '#161616',
     cardBackgroundSecondary: '#282828',
+    text: '#ebebeb',
+    textSecondary: '#bebebe',
   },
 };
 
