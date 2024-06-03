@@ -21,7 +21,10 @@ export function PostCard({id, title, author, coverImageURL, createdAt}: Props) {
   }
 
   return (
-    <PressableBox {...$boxStyle} onPress={navigateToPostScreen}>
+    <PressableBox
+      testID={`post-card-${id}`}
+      {...$boxStyle}
+      onPress={navigateToPostScreen}>
       <PostCardContent
         cardPadding={CARD_PADDING}
         coverImageURL={coverImageURL}
